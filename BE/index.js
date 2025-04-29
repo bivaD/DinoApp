@@ -5,6 +5,10 @@ const { Pool } = require('pg');
 
 const app = express();
 
+// Allow CORS from all origins
+app.use(cors());
+
+// PostgreSQL pool setup
 const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
